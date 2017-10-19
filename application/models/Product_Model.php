@@ -1,6 +1,34 @@
 <?php 
 
 Class Product_Model extends CI_Model{
+
+	public function save_product_info($data){
+		$this->db->insert('products_tbl', $data);
+	}
+
+
+	/**
+	*
+	* Sending product info to manage_products.php
+	*/
+	public function select_all_product_info(){
+		$this->db->select('*');
+		$this->db->from('products_tbl');
+		$query_result = $this->db->get();
+		$result = $query_result->result();
+
+		return $result;
+	}
+
+
+
+
+
+
+
+
+
+
 	/**
 	*
 	* insert category info into database

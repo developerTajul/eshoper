@@ -11,7 +11,7 @@
 				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Products</span><span class="label label-important"> 3 </span></a>
 				<ul>
 					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add New Product</span></a></li>
-					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/save_product"><i class="icon-file-alt"></i><span class="hidden-tablet"> Manage Products</span></a></li>
+					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/manage_products"><i class="icon-file-alt"></i><span class="hidden-tablet"> Manage Products</span></a></li>
 					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/category"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add New Category</span></a></li>
 					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/manage_category"><i class="icon-file-alt"></i><span class="hidden-tablet"> Manage Category</span></a></li>
 				</ul>	

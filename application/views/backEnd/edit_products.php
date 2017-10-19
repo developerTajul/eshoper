@@ -43,10 +43,11 @@
 						  <fieldset>
 
 
-<?php print_r($active_products); ?>
+<?php print_r($products_info); ?>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Title </label>
 							  <div class="controls">
+								<input type="text" name="product_er_id" class="span6 typeahead" id="typeahead" >
 								<input type="text" name="product_er_title" class="span6 typeahead" id="typeahead" >
 							  </div>
 							</div>
