@@ -5,8 +5,16 @@ class Welcome extends CI_Controller {
 
 
 	public function index(){
+		$data = array();
+		$data['header'] = $this->load->view('frontEnd/tp-parts/header', '', true); 
+		$data['footer'] = $this->load->view('frontEnd/tp-parts/footer', '', true); 
+		$data['main_slider'] = $this->load->view('frontEnd/tp-parts/main_slider', '', true); 
+		
+		$data['category_info'] = $this->Product_Model->select_all_active_category();
+		$data['left_sidebar'] = $this->load->view('frontEnd/tp-parts/left_sidebar', $data, true); 
+		$data['main_content'] = $this->load->view('frontEnd/tp-parts/main_content', '', true); 
 
 
-		$this->load->view('frontEnd/home');
+		$this->load->view('frontEnd/home', $data);
 	}
 }

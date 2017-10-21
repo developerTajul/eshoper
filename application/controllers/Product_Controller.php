@@ -93,15 +93,62 @@ Class Product_Controller extends CI_Controller{
 
 
 	// edit manage products
-	public function edit_products(){
+	public function edit_products($idd){
 		$data = array();
 		$data['header'] = $this->load->view('backEnd/tp-parts/header', '', true);
 		$data['footer'] = $this->load->view('backEnd/tp-parts/footer', '', true);
 		$data['main_menu'] = $this->load->view('backEnd/tp-parts/main_menu', '', true);
-		$data['products_info'] = $this->Product_Model->select_all_product_info();
+		$data['products_info'] = $this->Product_Model->select_product_info_by_id($idd);
 
 		$this->load->view('backEnd/edit_products', $data);	
 	}
+
+
+	// update products
+	public function update_products(){
+		$idd = $this->input->post('product_er_id');
+		$data = array();
+		$data['title'] = $this->input->post('product_er_title');
+		$data['regular_price'] = $this->input->post('product_er_regular_price');
+		$data['sale_price'] = $this->input->post('product_er_sale_price');
+		$data['product_image'] = $_FILES['product_er_image'];
+
+		if(!empty( $_FILES['product_er_image'] )){
+			$config['upload_path']          = './uploads/';
+	        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+	        $config['max_size']             = 100;
+	        $config['max_width']            = 1024;
+	        $config['max_height']           = 768;
+
+	        $this->load->library('upload', $config);
+
+	        if ( ! $this->upload->do_upload('product_er_image')){
+	                $error = $this->upload->display_errors();
+
+	                echo $error;
+	                exit();
+	        }else{
+	                $fdata = $this->upload->data();
+	                // echo "<pre>";
+	                // print_r($fdata);
+	                // exit();
+	                $data['product_image'] = $config['upload_path'].$fdata['file_name'];
+	        }
+		}
+
+		// $data['product_image'] = $this->input->post('product_er_image');
+		$data['product_short_desc'] = $this->input->post('product_er_short_desc');
+		$data['product_long_desc'] = $this->input->post('product_er_long_desc');
+
+
+		$this->Product_Model->update_product_info_by_id($idd, $data);
+
+		redirect('Product_Controller/manage_products');	
+
+	}
+
+
+
 
 /***
 *	

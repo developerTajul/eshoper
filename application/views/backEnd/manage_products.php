@@ -62,7 +62,7 @@
 									<a class="btn btn-success" href="#">
 										<i class="halflings-icon white zoom-in"></i>  
 									</a>
-									<a class="btn btn-info" href="#">
+									<a class="btn btn-info" href="<?php echo base_url(); ?>Product_Controller/edit_products/<?php echo $value->id; ?>">
 										<i class="halflings-icon white edit"></i>  
 									</a>
 									<a class="btn btn-danger" href="#">

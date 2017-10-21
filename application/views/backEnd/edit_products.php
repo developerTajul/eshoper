@@ -39,30 +39,30 @@
 					</div>
 					<div class="box-content">
 
-						<form class="form-horizontal" action="<?php echo base_url(); ?>Product_Controller/save_product" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" action="<?php echo base_url(); ?>Product_Controller/update_products" method="post" enctype="multipart/form-data">
 						  <fieldset>
 
 
-<?php print_r($products_info); ?>
+<?php echo "<pre>"; print_r($products_info); echo "</pre>"; ?>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Title </label>
 							  <div class="controls">
-								<input type="text" name="product_er_id" class="span6 typeahead" id="typeahead" >
-								<input type="text" name="product_er_title" class="span6 typeahead" id="typeahead" >
+								<input type="hidden" value="<?php echo $products_info->id; ?>" name="product_er_id" class="span6 typeahead" id="typeahead" >
+								<input type="text" value="<?php echo $products_info->title; ?>" name="product_er_title" class="span6 typeahead" id="typeahead" >
 							  </div>
 							</div>
 
 							<div class="control-group">
 							  <label class="control-label" for="regular_price">Regular Price </label>
 							  <div class="controls">
-								<input type="text" name="product_er_regular_price" class="span6 typeahead" id="regular_price" >
+								<input type="text" value="<?php echo $products_info->regular_price; ?>" name="product_er_regular_price" class="span6 typeahead" id="regular_price" >
 							  </div>
 							</div>
 
 							<div class="control-group">
 							  <label class="control-label" for="sale_price">Sale Price </label>
 							  <div class="controls">
-								<input type="text" name="product_er_sale_price" class="span6 typeahead" id="sale_price" >
+								<input type="text" value="<?php echo $products_info->sale_price; ?>" name="product_er_sale_price" class="span6 typeahead" id="sale_price" >
 							  </div>
 							</div>
 
@@ -71,7 +71,8 @@
 							<div class="control-group">
 							  <label class="control-label" for="fileInput">File input</label>
 							  <div class="controls">
-								<input name="product_er_image" class="input-file uniform_on" id="fileInput" type="file">
+								<input name="product_er_image" class="input-file uniform_on" id="fileInput" type="file"><br />
+								<img src="<?php echo base_url().$products_info->product_image; ?>" width="150px" height="150px"/> 
 							  </div>
 							</div> 
 
@@ -79,34 +80,21 @@
 							<div class="control-group hidden-phone">
 							  <label class="control-label" for="product_short_desc">Short Description</label>
 							  <div class="controls">
-								<textarea name="product_er_short_desc" class="cleditor" id="product_short_desc" rows="3"></textarea>
+								<textarea name="product_er_short_desc" class="cleditor" id="product_short_desc" rows="3"><?php echo $products_info->product_short_desc; ?></textarea>
 							  </div>
 							</div>
 
 							<div class="control-group hidden-phone">
 							  <label class="control-label" for="product_er_long_desc">Long Description</label>
 							  <div class="controls">
-								<textarea name="product_er_long_desc" class="cleditor" id="product_long_desc" rows="3"></textarea>
+								<textarea name="product_er_long_desc" class="cleditor" id="product_long_desc" rows="3"><?php echo $products_info->product_long_desc; ?></textarea>
 							  </div>
 							</div>
 
 
-							  <div class="control-group">
-								<label class="control-label" for="selectError3">Product Category</label>
-								<div class="controls">
-								  <select name="product_er_cat" id="selectError3">
-								  	<option>Choose Category</option>
-								  	<?php foreach($active_products as $value): ?>
-								  		<option value="<?php echo $value->id; ?>"><?php echo $value->cat_name; ?></option>
-								  	<?php endforeach; ?>
-									
-									
-								  </select>
-								</div>
-							  </div>
-
+							 
 							<div class="form-actions">
-							  <button type="submit" class="btn btn-primary">Save changes</button>
+							  <button type="submit" class="btn btn-primary">Update changes</button>
 							  <button type="reset" class="btn">Cancel</button>
 							</div>
 						  </fieldset>
