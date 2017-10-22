@@ -147,6 +147,12 @@ Class Product_Controller extends CI_Controller{
 
 	}
 
+	/**
+	*
+	* product details
+	*/
+	
+
 
 
 
@@ -235,9 +241,9 @@ Class Product_Controller extends CI_Controller{
 
 	/**
 	*
-	* delete 
+	*  sending data to homepage sidebar 
 	*/
-
+	
 
 
 

@@ -25,10 +25,10 @@ Class Product_Model extends CI_Model{
 	*
 	* sending product info to edit_products.php
 	*/
-	public function select_product_info_by_id($idd){
+	public function select_product_info_by_id($p_id){
 		$this->db->select('*');
 		$this->db->from('products_tbl');
-		$this->db->where('id', $idd);
+		$this->db->where('id', $p_id);
 		$query_result = $this->db->get();
 		$result = $query_result->row();
 
@@ -50,6 +50,19 @@ Class Product_Model extends CI_Model{
 
 
 
+
+
+/***
+**************************************************
+**************************************************
+**************************************************
+*
+* Category info
+*
+*************************************************
+*************************************************
+*************************************************
+***/
 
 
 
