@@ -54,7 +54,7 @@
 								<td><?php echo $value->id; ?></td>
 								<td class="center"><?= $value->title; ?></td>
 								<td class="center"><?= $value->regular_price; ?></td>
-								<td class="center"><img src="<?php echo base_url().$value->product_image; ?>" with="100px" height="100px" /></td>
+								<td class="center"><img src="<?php echo base_url().$value->product_image; ?>" width="100px" height="100px" /></td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>

@@ -111,14 +111,19 @@ Class Product_Controller extends CI_Controller{
 		$data['title'] = $this->input->post('product_er_title');
 		$data['regular_price'] = $this->input->post('product_er_regular_price');
 		$data['sale_price'] = $this->input->post('product_er_sale_price');
-		$data['product_image'] = $_FILES['product_er_image'];
+		$product_image = $_FILES['product_er_image'];
 
-		if(!empty( $_FILES['product_er_image'] )){
+		// echo "<pre>";
+		// print_r($product_image);
+		// exit();
+
+		if( !empty( $_FILES['product_er_image']['name'] ) ){
+
 			$config['upload_path']          = './uploads/';
 	        $config['allowed_types']        = 'gif|jpg|png|jpeg';
-	        $config['max_size']             = 100;
-	        $config['max_width']            = 1024;
-	        $config['max_height']           = 768;
+	        $config['max_size']             = 10000;
+	        $config['max_width']            = 10240;
+	        $config['max_height']           = 7680;
 
 	        $this->load->library('upload', $config);
 
