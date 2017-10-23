@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2017 at 06:36 AM
+-- Generation Time: Oct 23, 2017 at 05:16 PM
 -- Server version: 5.7.19-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `eshoper`
+-- Database: `ecommerce`
 --
 
 -- --------------------------------------------------------
@@ -65,9 +65,32 @@ CREATE TABLE `products_tbl` (
 
 INSERT INTO `products_tbl` (`id`, `title`, `regular_price`, `sale_price`, `product_image`, `product_short_desc`, `product_long_desc`, `product_cat`) VALUES
 (1, 'Samsu Kopa', 500, 5000, './uploads/product_27_1_thumb_png.jpeg', 'short description<br>', 'long description<br>', '3'),
-(2, 'Fish', 120, 110, './uploads/hair-fall1.jpg', 'This is a staut long descrop<br>', 'short description<br>', '3'),
-(3, 'Kopa', 120, 100, './uploads/Tajul.jpg', 'long description<br>', 'short descripton<br>', '1'),
+(2, 'Fish', 120, 110, './uploads/24.jpg', 'This is a staut long descrop<br>', 'short description<br>', '3'),
+(3, 'Kopa', 120, 100, './uploads/7.jpg', 'long description<br>', 'short descripton<br>', '1'),
 (4, 'T-Shirt', 150, 100, './uploads/product12.jpg', 'This is a short description<br>', 'This is a long description<br>', '3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_brands_tbl`
+--
+
+CREATE TABLE `product_brands_tbl` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `brand_desc` varchar(255) NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  `brand_status` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product_brands_tbl`
+--
+
+INSERT INTO `product_brands_tbl` (`id`, `name`, `brand_desc`, `logo`, `brand_status`) VALUES
+(2, 'Sumon Arroma', 'Sumon Arroma is one of the most leading cosmetic company in our country<br>', './uploads/118.jpg', 0),
+(3, 'Samsu', 'Valo acho ni<br>', './uploads/22.jpg', 1),
+(4, 'Annex', 'It is a well-known&nbsp; Brands<br>', './uploads/logo.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -111,6 +134,12 @@ ALTER TABLE `products_tbl`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_brands_tbl`
+--
+ALTER TABLE `product_brands_tbl`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product_cat_tbl`
 --
 ALTER TABLE `product_cat_tbl`
@@ -129,6 +158,11 @@ ALTER TABLE `admin_info`
 -- AUTO_INCREMENT for table `products_tbl`
 --
 ALTER TABLE `products_tbl`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `product_brands_tbl`
+--
+ALTER TABLE `product_brands_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `product_cat_tbl`

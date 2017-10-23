@@ -41,9 +41,6 @@
 
 						<form class="form-horizontal" action="<?php echo base_url(); ?>Product_Controller/update_products" method="post" enctype="multipart/form-data">
 						  <fieldset>
-
-
-<?php echo "<pre>"; print_r($products_info); echo "</pre>"; ?>
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Title </label>
 							  <div class="controls">

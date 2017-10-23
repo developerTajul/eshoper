@@ -46,7 +46,7 @@
 							  </tr>
 						  </thead>   
 						  <tbody>
-						  	<?php print_r($products_info); ?>
+					
 						  	<?php foreach ($products_info as $value) { ?>
 						  		
 						  	

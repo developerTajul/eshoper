@@ -40,7 +40,7 @@
 					<div class="box-content">
 						<form class="form-horizontal" action="<?php echo base_url(); ?>Product_Controller/update_brands" method="post" enctype="multipart/form-data">
 						  <fieldset>
-						  <?php print_r($brand_edit_info); ?>
+						  
 							<div class="control-group">
 							  <label class="control-label" for="typeahead">Name </label>
 							  <div class="controls">
