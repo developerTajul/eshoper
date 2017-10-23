@@ -13,7 +13,10 @@
 					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add New Product</span></a></li>
 					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/manage_products"><i class="icon-file-alt"></i><span class="hidden-tablet"> Manage Products</span></a></li>
 					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/category"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add New Category</span></a></li>
-					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/manage_category"><i class="icon-file-alt"></i><span class="hidden-tablet"> Manage Category</span></a></li>
+					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/manage_category"><i class="icon-file-alt"></i><span class="hidden-tablet"> Manage Category</span></a></li>		
+
+					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/brands"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add New Brand</span></a></li>
+					<li><a class="submenu" href="<?php echo base_url(); ?>Product_Controller/manage_brands"><i class="icon-file-alt"></i><span class="hidden-tablet"> Manage Brands</span></a></li>
 				</ul>	
 			</li>			
 
