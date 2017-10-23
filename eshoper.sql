@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 19, 2017 at 10:20 AM
+-- Generation Time: Oct 23, 2017 at 06:36 AM
 -- Server version: 5.7.19-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -59,6 +59,16 @@ CREATE TABLE `products_tbl` (
   `product_cat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `products_tbl`
+--
+
+INSERT INTO `products_tbl` (`id`, `title`, `regular_price`, `sale_price`, `product_image`, `product_short_desc`, `product_long_desc`, `product_cat`) VALUES
+(1, 'Samsu Kopa', 500, 5000, './uploads/product_27_1_thumb_png.jpeg', 'short description<br>', 'long description<br>', '3'),
+(2, 'Fish', 120, 110, './uploads/hair-fall1.jpg', 'This is a staut long descrop<br>', 'short description<br>', '3'),
+(3, 'Kopa', 120, 100, './uploads/Tajul.jpg', 'long description<br>', 'short descripton<br>', '1'),
+(4, 'T-Shirt', 150, 100, './uploads/product12.jpg', 'This is a short description<br>', 'This is a long description<br>', '3');
+
 -- --------------------------------------------------------
 
 --
@@ -79,7 +89,10 @@ CREATE TABLE `product_cat_tbl` (
 INSERT INTO `product_cat_tbl` (`id`, `cat_name`, `cat_desc`, `cat_status`) VALUES
 (1, 'WordPress Theme Dev info', 'info We are wordpress theme developer<br>', 1),
 (2, 'Joomla Theme Dev', 'There is a Joomla Theme Which is very<br>', 0),
-(3, 'woocommerce', 'This is the first time<br>', 1);
+(3, 'woocommerce', 'This is the first time<br>', 1),
+(4, 'WordPress Theme', 'WordPress is the Opensource<br>', 1),
+(5, 'Joomla Theme Dev', 'Joomla is one of the most powerful<br>', 1),
+(6, 'Shirt', 'All type of shirt<br>', 1);
 
 --
 -- Indexes for dumped tables
@@ -116,12 +129,12 @@ ALTER TABLE `admin_info`
 -- AUTO_INCREMENT for table `products_tbl`
 --
 ALTER TABLE `products_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `product_cat_tbl`
 --
 ALTER TABLE `product_cat_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
