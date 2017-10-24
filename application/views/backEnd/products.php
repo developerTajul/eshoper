@@ -42,9 +42,7 @@
 						<form class="form-horizontal" action="<?php echo base_url(); ?>Product_Controller/save_product" method="post" enctype="multipart/form-data">
 						  <fieldset>
 
-
-<?php print_r($active_products); ?>
-							<div class="control-group">
+						<div class="control-group">
 							  <label class="control-label" for="typeahead">Title </label>
 							  <div class="controls">
 								<input type="text" name="product_er_title" class="span6 typeahead" id="typeahead" >
@@ -90,19 +88,29 @@
 							</div>
 
 
-							  <div class="control-group">
-								<label class="control-label" for="selectError3">Product Category</label>
-								<div class="controls">
-								  <select name="product_er_cat" id="selectError3">
-								  	<option>Choose Category</option>
-								  	<?php foreach($active_products as $value): ?>
-								  		<option value="<?php echo $value->id; ?>"><?php echo $value->cat_name; ?></option>
-								  	<?php endforeach; ?>
-									
-									
-								  </select>
-								</div>
-							  </div>
+						  <div class="control-group">
+							<label class="control-label" for="selectError3">Product Category</label>
+							<div class="controls">
+							  <select name="product_er_cat" id="selectError3">
+							  	<option>Choose Category</option>
+							  	<?php foreach($active_products as $value): ?>
+							  		<option value="<?php echo $value->id; ?>"><?php echo $value->cat_name; ?></option>
+							  	<?php endforeach; ?>
+							  </select>
+							</div>
+						  </div>
+
+						  <div class="control-group">
+							<label class="control-label" for="selectError3">Brands</label>
+							<div class="controls">
+							  <select name="product_er_cat" id="selectError3">
+							  	<option>Choose Brands</option>
+							  	<?php foreach($active_brands as $value): ?>
+							  		<option value="<?php echo $value->id; ?>"><?php echo $value->name; ?></option>
+							  	<?php endforeach; ?>
+							  </select>
+							</div>
+						  </div>
 
 							<div class="form-actions">
 							  <button type="submit" class="btn btn-primary">Save changes</button>

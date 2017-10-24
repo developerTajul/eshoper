@@ -22,7 +22,7 @@ class Welcome extends CI_Controller {
 
 
 	public function product_details($p_id){
-				$data = array();
+		$data = array();
 		$data['header'] = $this->load->view('frontEnd/tp-parts/header', '', true); 
 		$data['footer'] = $this->load->view('frontEnd/tp-parts/footer', '', true); 
 		$data['main_slider'] = $this->load->view('frontEnd/tp-parts/main_slider', '', true); 

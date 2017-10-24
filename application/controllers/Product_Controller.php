@@ -9,7 +9,8 @@ Class Product_Controller extends CI_Controller{
 		$data['footer'] = $this->load->view('backEnd/tp-parts/footer', '', true);
 		$data['main_menu'] = $this->load->view('backEnd/tp-parts/main_menu', '', true);
 		$data['active_products'] = $this->Product_Model->select_all_active_category();
-		// $data['category_info'] = $this->Product_Model->select_all_category_info();
+		$data['active_brands'] = $this->Product_Model->select_all_active_brands();
+
 
 		$this->load->view('backEnd/products', $data);
 	}
@@ -35,10 +36,10 @@ Class Product_Controller extends CI_Controller{
 		
 
 		$config['upload_path']          = './uploads/';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100;
-        $config['max_width']            = 1024;
-        $config['max_height']           = 768;
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        $config['max_size']             = 1000;
+        $config['max_width']            = 10240;
+        $config['max_height']           = 7680;
 
         $this->load->library('upload', $config);
 
@@ -240,6 +241,32 @@ Class Product_Controller extends CI_Controller{
 		$data['cat_desc'] = $this->input->post('cat_er_desc');
 
 		$this->Product_Model->update_category_by_id($data, $cat_id);
+
+		redirect('Product_Controller/manage_category');
+	}
+
+
+
+	// unpublish category
+	public function unpublish_category($id){
+		$this->Product_Model->unpublish_category_by_id($id);
+
+		redirect('Product_Controller/manage_category');
+	}
+
+
+
+	// publish category
+	public function publish_category($idd){
+		$this->Product_Model->publish_category_by_id($idd);
+
+		redirect('Product_Controller/manage_category');
+	}
+
+
+	// delete category
+	public function delete_category($d_id){
+		$this->Product_Model->delete_category_by_id($d_id);
 
 		redirect('Product_Controller/manage_category');
 	}

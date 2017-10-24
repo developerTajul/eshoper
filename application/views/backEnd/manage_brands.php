@@ -38,9 +38,9 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable">
 						  <thead>
 							  <tr>
-								  <th>Username</th>
-								  <th>Date registered</th>
-								  <th>Role</th>
+								  <th>Id</th>
+								  <th>Brand Name</th>
+								  <th>Logo</th>
 								  <th>Status</th>
 								  <th>Actions</th>
 							  </tr>

@@ -47,7 +47,7 @@
 						  </thead>   
 						  <tbody>
 
-						  	<?php print_r($category_info); ?>
+					
 
 						  	<?php foreach($category_info as $value): ?>
 							<tr>
@@ -67,13 +67,23 @@
 							   <?php	}	?>
 
 								<td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="halflings-icon white zoom-in"></i>  
+								<?php 
+								 
+								if($status == 1){ ?>
+								<a class="btn btn-danger" href="<?php echo base_url(); ?>Product_Controller/unpublish_category/<?php echo $value->id; ?>">
+										<i class="halflings-icon white thumbs-down"></i>  
 									</a>
+								<?php }else{ ?>
+									<a class="btn btn-success" href="<?php echo base_url(); ?>Product_Controller/publish_category/<?php echo $value->id; ?>">
+										<i class="halflings-icon white thumbs-up"></i>  
+									</a>
+							   <?php }	?>
+
+									
 									<a class="btn btn-info" href="<?php echo base_url(); ?>Product_Controller/edit_category/<?php echo $value->id; ?>">
 										<i class="halflings-icon white edit"></i>  
 									</a>
-									<a class="btn btn-danger" href="#">
+									<a class="btn btn-danger" href="<?php echo base_url(); ?>Product_Controller/delete_category/<?php echo $value->id; ?>">
 										<i class="halflings-icon white trash"></i> 
 									</a>
 								</td>

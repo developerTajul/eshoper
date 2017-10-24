@@ -52,15 +52,16 @@ Class Product_Model extends CI_Model{
 	*
 	* Sending product info to cart.php
 	*/
-	public function select_all_product_info_by_id(){
+	public function select_all_product_info_by_id($product_id){
 		$this->db->select('*');
 		$this->db->from('products_tbl');
-		$this->db->join('product_brands_tbl', 'product_brands_tbl.id = products_tbl.id');
-		$this->db->join('admin_info', 'admin_info.id = products_tbl.id');
-		$this->db->join('product_cat_tbl', 'product_cat_tbl.id = products_tbl.id');
+		$this->db->where('id', $product_id);
+		// $this->db->join('product_brands_tbl', 'product_brands_tbl.id = products_tbl.id');
+		// $this->db->join('admin_info', 'admin_info.id = products_tbl.id');
+		// $this->db->join('product_cat_tbl', 'product_cat_tbl.id = products_tbl.id');
 
 		$query_result = $this->db->get();
-		$result = $query_result->result();
+		$result = $query_result->row();
 
 		return $result;
 	}
@@ -125,7 +126,7 @@ Class Product_Model extends CI_Model{
 
 
 	/**
-	*
+	* update category
 	*
 	*/
 	public function update_category_by_id($data, $cat_id){
@@ -134,8 +135,30 @@ Class Product_Model extends CI_Model{
 	}
 
 
+	// unpublish category
+	public function unpublish_category_by_id($id){
+		$this->db->set('cat_status', 0);
+		$this->db->where('id', $id);
+		$this->db->update('product_cat_tbl');
+	}
+
+
+	// publish category
+	public function publish_category_by_id($idd){
+		$this->db->set('cat_status', 1);
+		$this->db->where('id', $idd);
+		$this->db->update('product_cat_tbl');
+	}
+
+
+	// delete category
+	public function delete_category_by_id($d_id){
+		$this->db->where('id', $d_id);
+		$this->db->delete('product_cat_tbl');
+	}
+
 	/**
-	*
+	* all active category
 	*
 	*/
 	public function select_all_active_category(){
@@ -216,6 +239,19 @@ Class Product_Model extends CI_Model{
 	public function delete_product_by_id($p_iddd){
 		$this->db->where('id', $p_iddd);
 		$this->db->delete('product_brands_tbl');
+	}
+
+	/**
+	*
+	*
+	*/
+	public function select_all_active_brands(){
+		$this->db->select('*');
+		$this->db->from('product_brands_tbl');
+		$query_result = $this->db->get();
+		$result = $query_result->result();
+
+		return $result;
 	}
 
 }
