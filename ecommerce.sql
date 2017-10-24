@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2017 at 05:16 PM
+-- Generation Time: Oct 24, 2017 at 06:46 AM
 -- Server version: 5.7.19-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -56,18 +56,19 @@ CREATE TABLE `products_tbl` (
   `product_image` varchar(255) NOT NULL,
   `product_short_desc` varchar(255) NOT NULL,
   `product_long_desc` varchar(255) NOT NULL,
-  `product_cat` varchar(255) NOT NULL
+  `product_cat` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `products_tbl`
 --
 
-INSERT INTO `products_tbl` (`id`, `title`, `regular_price`, `sale_price`, `product_image`, `product_short_desc`, `product_long_desc`, `product_cat`) VALUES
-(1, 'Samsu Kopa', 500, 5000, './uploads/product_27_1_thumb_png.jpeg', 'short description<br>', 'long description<br>', '3'),
-(2, 'Fish', 120, 110, './uploads/24.jpg', 'This is a staut long descrop<br>', 'short description<br>', '3'),
-(3, 'Kopa', 120, 100, './uploads/7.jpg', 'long description<br>', 'short descripton<br>', '1'),
-(4, 'T-Shirt', 150, 100, './uploads/product12.jpg', 'This is a short description<br>', 'This is a long description<br>', '3');
+INSERT INTO `products_tbl` (`id`, `title`, `regular_price`, `sale_price`, `product_image`, `product_short_desc`, `product_long_desc`, `product_cat`, `quantity`) VALUES
+(1, 'Samsu Kopa', 500, 5000, './uploads/product_27_1_thumb_png.jpeg', 'short description<br>', 'long description<br>', '3', 120),
+(2, 'Fish', 120, 110, './uploads/24.jpg', 'This is a staut long descrop<br>', 'short description<br>', '3', 150),
+(3, 'Kopa', 120, 100, './uploads/7.jpg', 'long description<br>', 'short descripton<br>', '1', 200),
+(4, 'T-Shirt', 150, 100, './uploads/product12.jpg', 'This is a short description<br>', 'This is a long description<br>', '3', 50);
 
 -- --------------------------------------------------------
 
