@@ -45,12 +45,17 @@
 			<img src="<?php echo base_url(); ?>assets/frontEnd/images/product-details/rating.png" alt="" />
 			<span>
 				<span>US $<?php echo $product_info->regular_price; ?></span>
+				
+				<form action="<?php echo base_url(); ?>Cart/add_to_cart" method="post">
 				<label>Quantity:</label>
-				<input type="text" value="3" />
-				<button type="button" class="btn btn-fefault cart">
+				<input type="text" name="product_er_qty" value="<?php echo $product_info->quantity; ?>" />
+				<input type="hidden" name="product_er_id" value="<?php echo $product_info->id; ?>" />
+				<button type="submit" class="btn btn-fefault cart">
 					<i class="fa fa-shopping-cart"></i>
 					Add to cart
 				</button>
+				</form>
+
 			</span>
 			<p><b>Availability:</b> In Stock</p>
 			<p><b>Condition:</b> New</p>

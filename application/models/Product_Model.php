@@ -48,7 +48,28 @@ Class Product_Model extends CI_Model{
 
 
 
+	/**
+	*
+	* Sending product info to cart.php
+	*/
+	public function select_all_product_info_by_id(){
+		$this->db->select('*');
+		$this->db->from('products_tbl');
+		$this->db->join('product_brands_tbl', 'product_brands_tbl.id = products_tbl.id');
+		$this->db->join('admin_info', 'admin_info.id = products_tbl.id');
+		$this->db->join('product_cat_tbl', 'product_cat_tbl.id = products_tbl.id');
 
+		$query_result = $this->db->get();
+		$result = $query_result->result();
+
+		return $result;
+	}
+
+
+// $this->db->select('*');
+// $this->db->from('blogs');
+// $this->db->join('comments', 'comments.id = blogs.id');
+// $query = $this->db->get();
 
 
 
