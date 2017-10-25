@@ -47,6 +47,11 @@ Class Product_Model extends CI_Model{
 
 
 
+	/**
+	*
+	* publish or deactive product
+	*/
+
 
 	/**
 	*

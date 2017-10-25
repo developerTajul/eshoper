@@ -48,7 +48,7 @@
 				
 				<form action="<?php echo base_url(); ?>Cart/add_to_cart" method="post">
 				<label>Quantity:</label>
-				<input type="text" name="product_er_qty" value="<?php echo $product_info->quantity; ?>" />
+				<input type="number" name="product_er_qty"  min='1' value='1'/>
 				<input type="hidden" name="product_er_id" value="<?php echo $product_info->id; ?>" />
 				<button type="submit" class="btn btn-fefault cart">
 					<i class="fa fa-shopping-cart"></i>

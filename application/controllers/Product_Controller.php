@@ -155,8 +155,9 @@ Class Product_Controller extends CI_Controller{
 
 	/**
 	*
-	* product details
+	* deactivate
 	*/
+
 	
 
 

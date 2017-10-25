@@ -1,4 +1,4 @@
-<?php print_r($product_info); ?>
+
 <div class="features_items"><!--features_items-->
 	<h2 class="title text-center">Features Items</h2>
 
@@ -15,9 +15,14 @@
 					</div>
 					<div class="product-overlay">
 						<div class="overlay-content">
+						<form action="<?php echo base_url(); ?>Cart/add_to_cart" method="post">
 							<h2>$<?php echo $value->regular_price; ?></h2>
 							<a href="<?php echo base_url(); ?>Welcome/product_details/<?php echo $value->id; ?>"><p><?php echo $value->title; ?></p></a>
-							<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+							<input type="hidden" name="product_er_qty"  min='1' value='1'/>
+							<input type="hidden" name="product_er_id" value="<?php echo $value->id; ?>" />
+							<button type="submit" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+				
+						</form>	
 						</div>
 					</div>
 			</div>
